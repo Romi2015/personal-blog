@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yahweh Blog</title>
+  <link rel="stylesheet" href="h.css">
+  <style>
+    /* your CSS from above, including all styles exactly as written */
+    /* Add this small part for read-more content */
+    .read-more-content {
+      display: none;
+      padding: 1rem;
+      font-size: 0.95rem;
+      color: #444;
+      border-top: 1px solid #ddd;
+    }
+    .post.show-more .read-more-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-text"><span>YAH</span>WEH</div>
+    <i class="menu-toggle">☰</i>
+    <ul class="nav">
+      <li><a href="h .html">Home</a></li>
+      <li><a href="A.html">About</a></li>
+      <li><a href="#">Service</a></li>
+      <li>
+        <a href="#"><i>👤</i> Yahweh ▼</a>
+        <ul class="dropdown">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#" class="logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Welcome to Yahweh Blog</h2>
+    <p>Sharing thoughts, ideas, and inspiration.</p>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="blog-posts">
+    <div class="post">
+      <img src="https://source.unsplash.com/800x400/?nature" alt="Nature">
+      <h3>Finding Peace in Nature</h3>
+      <p>A refreshing journey through green landscapes and quiet places.</p>
+      <a href="#" class="read-more-btn">Read More</a>
+      <div class="read-more-content">
+        <p>Nature has a unique way of grounding us. Whether it's the sound of running water or the rustling of leaves, it invites us to breathe deeply, slow down, and reconnect with ourselves.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="https://source.unsplash.com/800x400/?city" alt="City">
+      <h3>Urban Inspirations</h3>
+      <p>Stories of architecture, city life, and concrete beauty.</p>
+      <a href="#" class="read-more-btn">Read More</a>
+      <div class="read-more-content">
+        <p>The city is a tapestry of stories. Behind every corner, streetlight, and skyline lies a rhythm of life that inspires art, innovation, and creativity.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="https://source.unsplash.com/800x400/?books" alt="Books">
+      <h3>Quiet Mornings & Good Books</h3>
+      <p>Our favorite peaceful reads to start the day right.</p>
+      <a href="#" class="read-more-btn">Read More</a>
+      <div class="read-more-content">
+        <p>There's something magical about starting the day with a warm cup and a great book. Here's a list of our favorites for slow mornings and deep thoughts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script to handle Read More toggle -->
+  <script>
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const post = this.closest('.post');
+        post.classList.toggle('show-more');
+        this.textContent = post.classList.contains('show-more') ? 'Read Less' : 'Read More';
+      });
+    });
+
+    // Menu toggle for mobile
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('showing');
+    });
+  </script>
+
+</body>
+</html>

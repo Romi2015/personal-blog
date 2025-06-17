@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - Yahweh Blog</title>
+  <link rel="stylesheet" href="s.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-text"><span>YAH</span>WEH</div>
+    <i class="menu-toggle">☰</i>
+    <ul class="nav">
+      <li><a href="h .html">Home</a></li>
+      <li><a href="A.html">About</a></li>
+      <li><a href="s.html">Services</a></li>
+      <li>
+        <a href="#"><i>👤</i> Yahweh ▼</a>
+        <ul class="dropdown">
+          <li><a href="d.html">Dashboard</a></li>
+          <li><a href="logout.html" class="logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Our Services</h2>
+    <p>Explore the services we offer to help inspire and empower you.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="content-wrapper">
+      <h3>Our Services</h3>
+      <p>At Yahweh Blog, we provide a variety of services designed to inspire, inform, and connect individuals with meaningful content. Here are the services we offer:</p>
+
+      <!-- Service 1: Content Creation -->
+      <div class="service-card">
+        <h4>Content Creation</h4>
+        <p>We create engaging and high-quality blog posts, articles, and multimedia content that resonate with your audience. Whether it's a personal blog, company site, or content strategy, we've got you covered.</p>
+      </div>
+
+      <!-- Service 2: Creative Writing -->
+      <div class="service-card">
+        <h4>Creative Writing</h4>
+        <p>Our team of skilled writers crafts beautiful narratives, articles, and stories that spark imagination and inspire your readers. From blogs to short stories, we offer versatile writing services for various needs.</p>
+      </div>
+
+      <!-- Service 3: Brand Consultation -->
+      <div class="service-card">
+        <h4>Brand Consultation</h4>
+        <p>We provide insightful consultations to help individuals and businesses define their brand identity. Through strategic thinking and creative solutions, we guide you in building a powerful brand presence online.</p>
+      </div>
+
+      <!-- Service 4: Photography & Visuals -->
+      <div class="service-card">
+        <h4>Photography & Visuals</h4>
+        <p>Need stunning visuals? Our photography service captures beautiful, high-resolution images that complement your blog content. We offer creative direction for photo shoots that fit your style and theme.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script for Menu Toggle -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('showing');
+    });
+  </script>
+
+</body>
+</html>

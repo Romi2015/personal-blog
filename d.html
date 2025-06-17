@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Yahweh Blog</title>
+  <link rel="stylesheet" href="d.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-text"><span>YAH</span>WEH Dashboard</div>
+    <a href="index.html" class="logout">Logout</a>
+  </header>
+
+  <main class="dashboard-container">
+    <aside class="sidebar">
+      <ul>
+        <li class="nav-item active" data-section="overview"><i class="fa fa-home"></i> Overview</li>
+        <li class="nav-item" data-section="posts"><i class="fa fa-pen"></i> Manage Posts</li>
+        <li class="nav-item" data-section="pages"><i class="fa fa-file"></i> Pages</li>
+        <li class="nav-item" data-section="comments"><i class="fa fa-comments"></i> Comments</li>
+        <li class="nav-item" data-section="settings"><i class="fa fa-cog"></i> Settings</li>
+      </ul>
+    </aside>
+
+    <section class="main-panel">
+      <!-- Overview -->
+      <div id="overview" class="content-section active">
+        <h2>Welcome back, Yahweh 👋</h2>
+        <p>This is your blog overview. Here's a quick snapshot of activity:</p>
+        <div class="stats">
+          <div class="card"><h3>120</h3><p>Total Posts</p></div>
+          <div class="card"><h3>24</h3><p>Pending Comments</p></div>
+          <div class="card"><h3>5</h3><p>Pages</p></div>
+        </div>
+      </div>
+
+      <!-- Posts -->
+      <div id="posts" class="content-section">
+        <h2>Manage Your Blog Posts</h2>
+        <p>Here you can create, edit, or delete posts. Recent posts:</p>
+        <ul>
+          <li>📄 How to Build Faith in Difficult Times</li>
+          <li>📄 7 Powerful Psalms for Strength</li>
+          <li>📄 The Role of Prayer in Modern Life</li>
+        </ul>
+        <button onclick="location.href='create-post.html'">Create New Post</button>
+      </div>
+
+      <!-- Pages -->
+      <div id="pages" class="content-section">
+        <h2>Manage Pages</h2>
+        <p>Your static pages like About, Contact, and Terms live here:</p>
+        <ul>
+          <li>📃 About</li>
+          <li>📃 Contact</li>
+          <li>📃 Privacy Policy</li>
+        </ul>
+        <button onclick="location.href='create-page.html'">Create New Page</button>
+      </div>
+
+      <!-- Comments -->
+      <div id="comments" class="content-section">
+        <h2>Comments</h2>
+        <p>Manage what your readers are saying:</p>
+        <ul>
+          <li>🗨️ “Great message! Very uplifting.” - Jane D.</li>
+          <li>🗨️ “Could you write more on faith?” - Mark T.</li>
+          <li>🗨️ “Thanks for sharing these scriptures.” - Rachel G.</li>
+        </ul>
+        <button onclick="location.href='comments.html'">View All Comments</button>
+      </div>
+
+      <!-- Settings -->
+      <div id="settings" class="content-section">
+        <h2>Settings</h2>
+        <p>Adjust your dashboard preferences and blog settings:</p>
+        <ul>
+          <li>🔒 Change Password</li>
+          <li>🖼️ Update Blog Logo</li>
+          <li>🌐 Domain Settings</li>
+        </ul>
+        <button onclick="location.href='settings.html'">Update Settings</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navItems = document.querySelectorAll(".nav-item");
+    const sections = document.querySelectorAll(".content-section");
+
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
+
+        item.classList.add("active");
+        const target = item.getAttribute("data-section");
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
